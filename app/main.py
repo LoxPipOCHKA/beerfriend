@@ -2,16 +2,6 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-
-#  get https://www.beerfrind.ru/variety
-#
-# get
-# https://www.beerfriend.ru/beers?variety_id={variety_id}
-# get
-# https://www.beerfriend.ru/beers/{beer_id}
-# post
-# https://www.beerfriend.ru/beers/{beer_id}/rewiew
-
 @app.get('/variety')
 async def variety():
     return 'ПРИВЕТ ПИДОРЫ ручка variety'
