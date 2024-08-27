@@ -6,16 +6,16 @@ app = FastAPI()
 
 @app.get('/variety')
 async def variety(variety: int):
-    return 'ПРИВЕТ ПИДОРЫ ручка variety'
+    return 'endpoint variety='+ {variety}
 
 @app.get('/beers')
 async def beers(beers: str,
                 variety: Optional[int]= Query(None, ge=1, le=8)):
-    return 'ручка beers GHBDTN PIDOR'
+    return 'endpoint beers='+ {beers}
 
 @app.get('/beers/{beer_id}')
 async def beer_id(beer_id: int):
-    return 'ручка beer_id пидор'
+    return 'endpoint beer_)id='+ {beer_id}
 
 
 class Sreview(BaseModel):
@@ -29,5 +29,5 @@ class Sreview(BaseModel):
 async def review(beers: str,
                  beer_id: int,
                 review: Sreview):
-    return 'endpoint review pidoras'
+    return 'endpoint review='+ Sreview
 
