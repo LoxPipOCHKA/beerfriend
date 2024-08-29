@@ -1,33 +1,19 @@
-from fastapi import FastAPI, Query
-from typing import Optional
-from pydantic import  BaseModel
+from fastapi import FastAPI
 
 app = FastAPI()
 
 @app.get('/variety')
-async def variety(variety: int):
+async def variety():
     return 'ПРИВЕТ ПИДОРЫ ручка variety'
 
 @app.get('/beers')
-async def beers(beers: str,
-                variety: Optional[int]= Query(None, ge=1, le=8)):
+async def beers():
     return 'ручка beers GHBDTN PIDOR'
 
 @app.get('/beers/{beer_id}')
-async def beer_id(beer_id: int):
+async def beer_id():
     return 'ручка beer_id пидор'
 
-
-class Sreview(BaseModel):
-    name_beer: str
-    comment: str
-    nick: str
-    estimation: int
-
-
 @app.post('/beers/{beer_id}/review')
-async def review(beers: str,
-                 beer_id: int,
-                review: Sreview):
+async def review():
     return 'endpoint review pidoras'
-
